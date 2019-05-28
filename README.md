@@ -135,7 +135,7 @@ If everything is setup properly, you can should have a directory layout similar 
     `-- runIntroHCR.R
 ```
 
-When running `createApp.sh` if should create a new directory called ``HCR.app`` with the following inner layout:
+When running `createApp.sh`, it should create a new directory called ``HCR.app`` with the following inner layout:
 
 ```
 `-- Contents

@@ -12,21 +12,30 @@ It's possible to bypass this issue by renaning the script using the ``.command``
 ### Compilation
 In order to compile ``launcher``, open a **Terminal** and ``cd`` to the proper location. Then invoke the following command: 
 
-```make```
+```
+make
+```
 
 This should produce an executable named ``launcher``.
 
 The following command removes all objects files from the compilation folder:
-```make clean```
+
+```
+make clean
+```
 
 The following command removes all objects files as well as the compiled excutable from the compilation folder:
-```make clean-all```
+
+```
+make clean-all
+```
 
 ### Usage
 Once the program has been compiled, you need to copy the files ``launcher`` and ``config.ini`` from the ``launcher`` folder to your portable Shiny project.
 Both files should be located in the folder where your startup script and other files and folders for your portable R Shiny app are located.
 
-**config.ini**
+**``config.ini``**
+
 This file is a text file that contains a single key pair value. You need to edit this file in order to setup the proper value for your startup script.
 The key should always be ``app``
 The value should be the exact name of the startup script for your standalone shiny app similar to:
@@ -37,7 +46,8 @@ app=IntroHCR.sh
 
 Feel free to change the value for other apps.
 
-**launcher**
+**``launche``r**
+
 This binary is the pre-compiled launcher, it will seek the ``config.ini file``, load it to learn the value of the command and then attempt to run the command from the current directory where it is located. 
 The program exits when the command ends (usually when the browser window is closed).
 
@@ -82,7 +92,8 @@ Most users on macOS have no experience of **Terminal** or UNIX-style commands an
 In order to create an app folder, you need to copy the script file ``createApp.sh`` from the ``packager`` folder to your portable Shiny project.
 This file should be located in the folder where your startup script and other files and folders for your portable R Shiny app are located. The files ``launcher`` and ``config.ini`` should also be present in this folder.
 
-**createApp.sh**
+**``createApp.sh``**
+
 This script creates and then launches a macOS app folder (in order to test it), that is a fully redistributable application for macOS. 
 
 Note: the app is not digitally signed as of now and has no icon and very little publisher information.
@@ -90,6 +101,7 @@ Note: the app is not digitally signed as of now and has no icon and very little 
 In order to support additional apps, you may customize variables that are defined ahead of the script. This includes the following variables you may want to customize:
 
 **``APP``**
+
 The name of the application. This will show up as the name of the folder (``<APP>.app``), the name of the application as shown in macOS and other places where this value comes from. The launcher exec will be renamed to this value as well when copied into the app folder (in ``<APP>.app/Contents/MacOS/``). I.e.:
 
 ```
@@ -97,6 +109,7 @@ APP=HCR
 ```
 
 **``SCRIPT``**
+
 The exact name of your Shiny app startup script. I.e.:
 
 ```

@@ -1,15 +1,15 @@
 # ofps-sam-applauncher
 Tools used to launch and package standalone R Shiny apps for macOS for the MSE workshop. This may be adapted and reused for other OSes and purposes.
 
-##prerequisites##
+## Prerequisites
 You need GCC as well as command lines compilation tools for Xcode. If the ``make`` command is not available you may install it from Homebrew.
 You also need to make sure that your R Shiny app is working OK on macOS.
 
-##Launcher##
+## Launcher
 This C++ based tool allows to launch a script through a native executable. One of the issue we've had is that on macOS, ``.sh`` files are either opened in text editor or in XCode if installed.
 It's possible to bypass this issue by renaning the script using the ``.command`` file extension. However when this is done, macOS starts the script from the home directory of the end user instead of the directory where the script is located. This causes the script to fail starting the R Shiny app as it cannot find the R interpreter and other resources needed for the application to run.
 
-###Compilation###
+### Compilation
 In order to compile ``launcher``, open a **Terminal** and ``cd`` to the proper location. Then invoke the following command: 
 
 ```make```
@@ -22,7 +22,7 @@ The following command removes all objects files from the compilation folder:
 The following command removes all objects files as well as the compiled excutable from the compilation folder:
 ```make clean-all```
 
-###Usage###
+### Usage
 Once the program has been compiled, you need to copy the files ``launcher`` and ``config.ini`` from the ``launcher`` folder to your portable Shiny project.
 Both files should be located in the folder where your startup script and other files and folders for your portable R Shiny app are located.
 
@@ -41,7 +41,7 @@ Feel free to change the value for other apps.
 This binary is the pre-compiled launcher, it will seek the ``config.ini file``, load it to learn the value of the command and then attempt to run the command from the current directory where it is located. 
 The program exits when the command ends (usually when the browser window is closed).
 
-###Test###
+### Test
 If everything is setup properly, you can should have a directory layout similar to:
 
 ```
@@ -76,7 +76,7 @@ From the command line, the app should work straight in the same fashion when you
 
 When starting by double-click in the UI, it’ll open a terminal and then run the command in it. When the browser is closed the terminal ends but the window will remain on screen and needs to be manually closed.
 
-##Packager##
+## Packager
 Most users on macOS have no experience of **Terminal** or UNIX-style commands and are usually accustomed to double-clicking an app icon in order to start a program. On macOS, apps are just special folders that contain everything needed to run a self-enclosed application.
 
 In order to create an app folder, you need to copy the script file ``createApp.sh`` from the ``packager`` folder to your portable Shiny project.
@@ -105,7 +105,7 @@ SCRIPT=IntroHCR.sh
 
 The rest of the script can remained untouched.
 
-###Test###
+### Test
 If everything is setup properly, you can should have a directory layout similar to:
 
 ```

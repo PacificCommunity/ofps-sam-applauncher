@@ -166,6 +166,7 @@ If everything is setup properly, you can should have a directory layout similar 
 |   |-- modules
 |   |-- share
 |   `-- tests
+|-- SPC-Icon.icns
 |-- config.ini
 |-- createApp.sh
 |-- launcher
@@ -204,6 +205,7 @@ When running `createApp.sh`, it should create a new directory called ``HCR.app``
     |       |-- AMPED
     |       `-- runIntroHCR.R
     |-- Resources
+    |   `-- SPC-icon.icns	
     `-- version.plist
 ```
 
